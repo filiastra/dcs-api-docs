@@ -31,12 +31,20 @@ Hooks
     - GroundPowerOff
     - GroundAirOff
     - GroundAirOn
+    - GroundAirFailure
+    - GroundAirApplyOn
+    - GroundAirApplyOff
+    - GroundAirApplyFailure
     - WeaponRearmFirstStep
     - WeaponRearmComplete
     - WeaponRearmSingleStepComplete
     - UnlimitedWeaponStationRestore
     - WheelChocksOn
     - WheelChocksOff
+    - Repair
+    - ReloadDone
+    - RefuelDone
+    - cockpit_release
 
     :param name: The name of the event.
     :type name: string
@@ -57,6 +65,11 @@ Hooks
 .. function:: update()
 
     Called on an interval set by :func:`make_default_activity`.
+
+.. function:: release()
+
+    Called when the mission reloads, player dies or otherwise leaves the aircraft.
+    Can be used to clean up any resources that are not cleaned up automatically.
 
 ----
 
